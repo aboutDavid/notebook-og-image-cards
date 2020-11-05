@@ -100,7 +100,6 @@ function getCss(theme: string, fontSize: string) {
         font-style: normal;
         color: ${foreground};
         line-height: 1.8;
-        font-size:48px;
     }`;
 }
 

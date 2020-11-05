@@ -100,6 +100,7 @@ function getCss(theme: string, fontSize: string) {
         font-style: normal;
         color: ${foreground};
         line-height: 1.8;
+        font-size:48px;
     }`;
 }
 
@@ -117,12 +118,14 @@ export function getHtml(parsedReq: ParsedRequest) {
         <div>
             <div class="spacer">
             <div class="logo-wrapper">
-                ${emojify(
-                md ? marked(text) : sanitizeHtml(text)
-            )}
+                ${images.map((img, i) =>
+                    getPlusSign(i) + getImage(img, widths[i], heights[i])
+                ).join('')}
             </div>
             <div class="spacer">
-            <div class="heading">
+            <div class="heading">${emojify(
+                md ? marked(text) : sanitizeHtml(text)
+            )}
             </div>
         </div>
     </body>
